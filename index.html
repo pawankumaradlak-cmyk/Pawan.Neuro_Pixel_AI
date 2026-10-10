@@ -1,1338 +1,567 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>RANGERS AI | Fashion AI Control Layer</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANGERS AI | Fashion AI Control Layer | FAIL | 2 | RISE Round 2</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
-
 <body>
-
 
     <!-- ==========================================
          HEADER
     =========================================== -->
-
     <header>
-
         <div class="logo">
             RANGERS<span>AI</span>
         </div>
-
         <div class="header-text">
-            Fashion AI Control Layer
+            FAIL | 2 | RISE · Round 2 · 15 Oct 2026
         </div>
-
     </header>
-
-
 
     <!-- ==========================================
          MAIN
     =========================================== -->
-
     <main>
-
 
         <!-- ======================================
              HERO
         ======================================= -->
-
         <section class="hero">
-
             <span class="section-tag">
-                FAIL → FIX → BUILD
+                ROUND 2 · FAIL → FIX → BUILD → PITCH
             </span>
-
-            <h1>
-                Fashion AI Control Layer
-            </h1>
-
+            <h1>Fashion AI Control Layer</h1>
             <p>
-                One workflow. Multiple AI models.
-                Better control, quality and cost.
+                A prototype fix for NeuroPixel.AI's failure:
+                one workflow, multiple AI models, with better
+                control, quality and cost.
             </p>
-
+            <div class="pitch-nav">
+                <a href="#problem">1 Problem</a>
+                <a href="#existing">2 Existing</a>
+                <a href="#gap">3 Gap</a>
+                <a href="#innovation">4 Innovation</a>
+                <a href="#prototype">5 Prototype</a>
+                <a href="#feasibility">6 Feasibility</a>
+                <a href="#future">7 Future</a>
+            </div>
         </section>
 
+        <!-- ======================================
+             PITCH STORY: PROBLEM / EXISTING / GAP / INNOVATION
+        ======================================= -->
+        <section class="card" id="problem">
+            <span class="section-tag">1 · THE PROBLEM</span>
+            <h2>Why NeuroPixel.AI failed</h2>
+            <p class="lead">
+                NeuroPixel.AI built proprietary GenAI for fashion (synthetic humans, catalogue shoots, virtual try-on). When foundation models rapidly improved image quality, its technology moat disappeared.
+            </p>
+            <p class="lead">
+                <strong>Critical question:</strong> how can a fashion-AI company stay differentiated when foundation models commoditise image generation?
+            </p>
+            <p class="lead small">
+                Affected: fashion brands and AI vendors who lose control over quality, cost, speed and reliability.
+            </p>
+        </section>
 
+        <section class="card" id="existing">
+            <span class="section-tag">2 · EXISTING SOLUTIONS</span>
+            <h2>What exists today</h2>
+            <div class="story-grid">
+                <div class="story-item">
+                    <strong>Direct single-model use</strong>
+                    <p>Brands call one frontier image model directly for catalogue and on-model images.</p>
+                </div>
+                <div class="story-item">
+                    <strong>All-in-one AI photoshoot tools</strong>
+                    <p>Generic tools with one fixed engine and a fixed price per image.</p>
+                </div>
+                <div class="story-item">
+                    <strong>Manual photoshoots</strong>
+                    <p>Models, photographers and post-production: reliable but slow and expensive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card gap-card" id="gap">
+            <span class="section-tag">3 · THE GAP</span>
+            <h2>What existing solutions are missing</h2>
+            <ul class="gap-list">
+                <li><strong>Model lock-in:</strong> one engine for every job, whether it needs top fidelity or a cheap draft.</li>
+                <li><strong>No cost control:</strong> the most expensive model is used even when a cheaper one is enough.</li>
+                <li><strong>No reliability:</strong> if the model is down, the whole job fails.</li>
+                <li><strong>No garment-fidelity QA:</strong> outputs go to customers without an automated check.</li>
+                <li><strong>No fashion controls or audit log:</strong> little control over background, pose and what happened on each job.</li>
+            </ul>
+        </section>
+
+        <section class="card innovation-card" id="innovation">
+            <span class="section-tag">4 · OUR INNOVATION</span>
+            <h2>A model-agnostic Fashion AI Control Layer</h2>
+            <p class="lead">
+                Instead of competing on image generation, RANGERS AI owns the
+                <strong>workflow</strong> on top of whichever model is best.
+            </p>
+            <div class="story-grid">
+                <div class="story-item"><strong>⚡ Auto Router</strong><p>Picks the right model from the fidelity requirement.</p></div>
+                <div class="story-item"><strong>🔄 Auto Failover</strong><p>Reroutes instantly when a model goes offline.</p></div>
+                <div class="story-item"><strong>✅ Automated QA Gate</strong><p>Scores every output; only PASS can be approved.</p></div>
+                <div class="story-item"><strong>🧾 Cost + Audit Log</strong><p>Every job logs model, cost, time and QA result.</p></div>
+            </div>
+        </section>
+
+        <div class="proto-banner" id="prototype">
+            <span class="section-tag">5 · PROTOTYPE / DEMO</span>
+            <h2>Existing approach + our innovation, live</h2>
+            <p>Select a preset or upload a garment, set the controls, then generate. Use the outage buttons or the Judge Demo to see the existing approach fail while the control layer recovers.</p>
+        </div>
 
         <!-- ======================================
              1. UPLOAD GARMENT
         ======================================= -->
-
         <section class="card">
+            <h2>1. Upload Garment</h2>
 
-            <h2>
-                1. Upload Garment
-            </h2>
-
-
-            <div class="upload-box">
-
-                <input
-                    type="file"
-                    id="garmentInput"
-                    accept="image/*"
-                >
-
-
-                <label for="garmentInput">
-
-                    📷 Upload Garment Image
-
-                </label>
-
-
-                <p id="fileName">
-                    No image selected
-                </p>
-
+            <!-- Quick Preset Select for Hackathon Pitch -->
+            <div class="preset-selector-bar">
+                <span class="preset-label-tag">Quick Demo Garments:</span>
+                <button type="button" class="preset-btn active" id="btnPresetSweater" onclick="loadPresetGarment('sweater')">🧶 Patchwork Sweater</button>
+                <button type="button" class="preset-btn" id="btnPresetCoat" onclick="loadPresetGarment('coat')">🧥 Brocade Coat</button>
+                <button type="button" class="preset-btn" id="btnPresetSkirt" onclick="loadPresetGarment('skirt')">👗 Pleated Skirt</button>
+                <button type="button" class="preset-btn" id="btnPresetParka" onclick="loadPresetGarment('parka')">🥾 Utility Parka</button>
             </div>
 
+            <div class="upload-box">
+                <input type="file" id="garmentInput" accept="image/*">
+                <label for="garmentInput">📷 Upload Custom Garment</label>
+                <p id="fileName">Loaded: denim_jacket_flatlay.png</p>
+            </div>
 
-            <img
-                id="previewImage"
-                class="preview-image"
-                alt="Garment preview"
-            >
-
+            <img id="previewImage" class="preview-image" alt="Garment preview" style="display: block;">
         </section>
-
-
 
         <!-- ======================================
              2. AUTO ROUTING
         ======================================= -->
-
         <section class="card auto-route-card">
-
-
-            <!-- AUTO ROUTE HEADER -->
-
             <div class="auto-route-header">
-
                 <div>
-
-                    <span class="section-tag">
-                        INTELLIGENT ROUTING
-                    </span>
-
-
-                    <h2>
-                        AI Model Selection
-                    </h2>
-
-
+                    <span class="section-tag">INTELLIGENT ROUTING</span>
+                    <h2>AI Model Selection</h2>
                     <p class="auto-route-description">
-
-                        RANGERS AI automatically selects
-                        the most suitable model based on
-                        the requested quality and fashion
-                        requirements.
-
+                        RANGERS AI automatically selects the most suitable model based on requested quality and fashion requirements.
                     </p>
-
                 </div>
-
-
-                <div class="auto-badge">
-
-                    ⚡ AUTO ROUTE ACTIVE
-
-                </div>
-
+                <div class="auto-badge">⚡ AUTO ROUTE ACTIVE</div>
             </div>
-
-
 
             <!-- ROUTING PIPELINE -->
-
             <div class="routing-pipeline">
-
-
                 <div class="pipeline-step">
-
-                    <div class="pipeline-icon">
-                        📷
-                    </div>
-
-                    <strong>
-                        Input
-                    </strong>
-
-                    <small>
-                        Garment Image
-                    </small>
-
+                    <div class="pipeline-icon">📷</div>
+                    <strong>Input</strong>
+                    <small>Garment Spec</small>
                 </div>
-
-
-                <div class="pipeline-arrow">
-                    →
-                </div>
-
-
+                <div class="pipeline-arrow">→</div>
                 <div class="pipeline-step router-step">
-
-                    <div class="pipeline-icon">
-                        ⚡
-                    </div>
-
-                    <strong>
-                        Auto Router
-                    </strong>
-
-                    <small>
-                        Analyses Requirements
-                    </small>
-
+                    <div class="pipeline-icon">⚡</div>
+                    <strong>Auto Router</strong>
+                    <small>Optimising Fidelity & Cost</small>
                 </div>
-
-
-                <div class="pipeline-arrow">
-                    →
-                </div>
-
-
+                <div class="pipeline-arrow">→</div>
                 <div class="pipeline-step">
-
-                    <div class="pipeline-icon">
-                        🤖
-                    </div>
-
-                    <strong id="liveModel">
-                        Waiting...
-                    </strong>
-
-                    <small>
-                        Selected Model
-                    </small>
-
+                    <div class="pipeline-icon">🤖</div>
+                    <strong id="liveModel">Model A</strong>
+                    <small>Selected Engine</small>
                 </div>
-
             </div>
-
-
 
             <!-- ROUTER STATUS -->
-
-            <div
-                class="router-status"
-                id="routerStatus"
-            >
-
-                <div class="router-status-icon">
-                    ⚡
-                </div>
-
-
+            <div class="router-status" id="routerStatus">
+                <div class="router-status-icon">✓</div>
                 <div>
-
-                    <strong>
-                        Router Ready
-                    </strong>
-
-
-                    <p>
-
-                        Adjust the fashion requirements
-                        below. RANGERS AI will automatically
-                        select the model.
-
-                    </p>
-
+                    <strong>Router Selected: Model A</strong>
+                    <p>Balanced quality and cost requirement detected. Model A is preferred.</p>
                 </div>
-
             </div>
 
-
-
-            <!-- ==================================
-                 MODEL DECISION PANEL
-            =================================== -->
-
+            <!-- MODEL DECISION PANEL -->
             <div class="model-decision-panel">
-
-
                 <div class="decision-heading">
-
                     <div>
-
-                        <span class="section-tag">
-                            ROUTING ANALYSIS
-                        </span>
-
-                        <h3>
-                            Model Decision
-                        </h3>
-
+                        <span class="section-tag">ROUTING ANALYSIS</span>
+                        <h3>Model Decision</h3>
                     </div>
-
-
-                    <span class="decision-live">
-                        LIVE
-                    </span>
-
+                    <span class="decision-live">LIVE</span>
                 </div>
 
-
-
-                <!-- MODEL OPTIONS -->
-
+                <!-- MODEL CARDS -->
                 <div class="model-options">
-
-
-                    <!-- MODEL A -->
-
-                    <div
-                        class="model-option"
-                        id="modelA"
-                    >
-
+                    <div class="model-option" id="modelA">
                         <div class="model-option-top">
-
-                            <strong>
-                                Model A
-                            </strong>
-
-                            <span
-                                class="model-status"
-                                id="statusA"
-                            >
-                                AVAILABLE
-                            </span>
-
+                            <strong>Model A</strong>
+                            <span class="model-status" id="statusA">AVAILABLE</span>
                         </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Quality
-                            </span>
-
-                            <span>
-                                92%
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Cost
-                            </span>
-
-                            <span>
-                                ₹2.10
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Speed
-                            </span>
-
-                            <span>
-                                8.4 sec
-                            </span>
-
-                        </div>
-
+                        <div class="model-stat"><span>Quality</span><span>92%</span></div>
+                        <div class="model-stat"><span>Cost</span><span>₹2.10</span></div>
+                        <div class="model-stat"><span>Speed</span><span>8.4 sec</span></div>
                     </div>
 
-
-
-                    <!-- MODEL B -->
-
-                    <div
-                        class="model-option"
-                        id="modelB"
-                    >
-
+                    <div class="model-option" id="modelB">
                         <div class="model-option-top">
-
-                            <strong>
-                                Model B
-                            </strong>
-
-                            <span
-                                class="model-status"
-                                id="statusB"
-                            >
-                                AVAILABLE
-                            </span>
-
+                            <strong>Model B</strong>
+                            <span class="model-status" id="statusB">AVAILABLE</span>
                         </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Quality
-                            </span>
-
-                            <span>
-                                87%
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Cost
-                            </span>
-
-                            <span>
-                                ₹1.40
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Speed
-                            </span>
-
-                            <span>
-                                6.8 sec
-                            </span>
-
-                        </div>
-
+                        <div class="model-stat"><span>Quality</span><span>87%</span></div>
+                        <div class="model-stat"><span>Cost</span><span>₹1.40</span></div>
+                        <div class="model-stat"><span>Speed</span><span>6.8 sec</span></div>
                     </div>
 
-
-
-                    <!-- MODEL C -->
-
-                    <div
-                        class="model-option"
-                        id="modelC"
-                    >
-
+                    <div class="model-option" id="modelC">
                         <div class="model-option-top">
-
-                            <strong>
-                                Model C
-                            </strong>
-
-                            <span
-                                class="model-status"
-                                id="statusC"
-                            >
-                                AVAILABLE
-                            </span>
-
+                            <strong>Model C</strong>
+                            <span class="model-status" id="statusC">AVAILABLE</span>
                         </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Quality
-                            </span>
-
-                            <span>
-                                95%
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Cost
-                            </span>
-
-                            <span>
-                                ₹2.80
-                            </span>
-
-                        </div>
-
-
-                        <div class="model-stat">
-
-                            <span>
-                                Speed
-                            </span>
-
-                            <span>
-                                10.2 sec
-                            </span>
-
-                        </div>
-
+                        <div class="model-stat"><span>Quality</span><span>95%</span></div>
+                        <div class="model-stat"><span>Cost</span><span>₹2.80</span></div>
+                        <div class="model-stat"><span>Speed</span><span>10.2 sec</span></div>
                     </div>
-
                 </div>
-
-
 
                 <!-- DECISION RESULT -->
-
-                <div
-                    class="decision-result"
-                    id="decisionResult"
-                >
-
-                    <div class="decision-check">
-                        ✓
-                    </div>
-
-
+                <div class="decision-result" id="decisionResult">
+                    <div class="decision-check">✓</div>
                     <div>
-
-                        <strong id="decisionModel">
-                            Waiting for requirements
-                        </strong>
-
-
-                        <p id="decisionReason">
-
-                            Adjust the fidelity requirement
-                            to see the router make a decision.
-
-                        </p>
-
+                        <strong id="decisionModel">✓ Model A selected automatically</strong>
+                        <p id="decisionReason">Balanced quality and cost requirement detected.</p>
                     </div>
-
                 </div>
 
-
-
-                <!-- ==================================
-                     RESILIENCE TEST
-                =================================== -->
-
+                <!-- RESILIENCE TEST -->
                 <div class="resilience-box">
-
-
                     <div class="resilience-header">
-
                         <div>
-
-                            <span class="section-tag">
-                                RESILIENCE TEST
-                            </span>
-
-
-                            <h3>
-                                Simulate Model Outage
-                            </h3>
-
-
-                            <p>
-
-                                Test whether the control layer
-                                can automatically reroute a
-                                request when a model becomes
-                                unavailable.
-
-                            </p>
-
+                            <span class="section-tag">RESILIENCE TEST</span>
+                            <h3>Simulate Model Outage</h3>
+                            <p>Test whether the control layer automatically reroutes when a foundation provider crashes.</p>
                         </div>
-
-
-                        <span class="resilience-badge">
-
-                            FAILOVER READY
-
-                        </span>
-
+                        <span class="resilience-badge">FAILOVER READY</span>
                     </div>
-
-
-
-                    <!-- OUTAGE CONTROLS -->
 
                     <div class="outage-controls">
-
-
-                        <button
-                            class="outage-btn"
-                            id="failModelA"
-                            onclick="toggleModelFailure('Model A')"
-                        >
-
-                            <span>
-                                Model A
-                            </span>
-
-                            <small>
-                                ONLINE
-                            </small>
-
+                        <button class="outage-btn" id="failModelA" onclick="toggleModelFailure('Model A')">
+                            <span>Model A</span>
+                            <small>ONLINE</small>
                         </button>
-
-
-
-                        <button
-                            class="outage-btn"
-                            id="failModelB"
-                            onclick="toggleModelFailure('Model B')"
-                        >
-
-                            <span>
-                                Model B
-                            </span>
-
-                            <small>
-                                ONLINE
-                            </small>
-
+                        <button class="outage-btn" id="failModelB" onclick="toggleModelFailure('Model B')">
+                            <span>Model B</span>
+                            <small>ONLINE</small>
                         </button>
-
-
-
-                        <button
-                            class="outage-btn"
-                            id="failModelC"
-                            onclick="toggleModelFailure('Model C')"
-                        >
-
-                            <span>
-                                Model C
-                            </span>
-
-                            <small>
-                                ONLINE
-                            </small>
-
+                        <button class="outage-btn" id="failModelC" onclick="toggleModelFailure('Model C')">
+                            <span>Model C</span>
+                            <small>ONLINE</small>
                         </button>
-
                     </div>
 
-
-
-                    <div
-                        class="failover-message"
-                        id="failoverMessage"
-                    >
-
-                        All models operational.
-                        Automatic failover is ready.
-
+                    <div class="failover-message" id="failoverMessage">
+                        All models operational. Automatic failover is ready.
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <!-- ======================================
              3. FASHION CONTROLS
         ======================================= -->
-
         <section class="card">
+            <h2>3. Fashion & Environment Controls</h2>
 
-            <h2>
-                3. Fashion Controls
-            </h2>
+            <label for="fidelity">Garment Fidelity Threshold</label>
+            <input type="range" id="fidelity" min="50" max="100" value="90" oninput="updateFidelity()">
+            <p>Requested Fidelity: <strong id="fidelityValue">90%</strong></p>
 
-
-            <!-- FIDELITY -->
-
-            <label for="fidelity">
-
-                Garment Fidelity
-
-            </label>
-
-
-            <input
-                type="range"
-                id="fidelity"
-                min="50"
-                max="100"
-                value="90"
-                oninput="updateFidelity()"
-            >
-
-
-            <p>
-
-                Fidelity:
-                <strong id="fidelityValue">
-                    90%
-                </strong>
-
-            </p>
-
-
-
-            <!-- BACKGROUND -->
-
-            <label for="background">
-
-                Background
-
-            </label>
-
-
+            <label for="background">Catalogue Environment</label>
             <select id="background">
-
-                <option>
-                    Studio
-                </option>
-
-                <option>
-                    Outdoor
-                </option>
-
-                <option>
-                    Luxury Store
-                </option>
-
-                <option>
-                    Street
-                </option>
-
+                <option value="Studio">Clean Studio Editorial</option>
+                <option value="Outdoor">Outdoor Lifestyle / Cityscape</option>
+                <option value="Luxury Store">Luxury Flagship Store</option>
+                <option value="Street">High-Street Daylight Shoot</option>
             </select>
 
-
-
-            <!-- POSE -->
-
-            <label for="pose">
-
-                Model Pose
-
-            </label>
-
-
+            <label for="pose">Model Pose & Shot Framing</label>
             <select id="pose">
-
-                <option>
-                    Full Body
-                </option>
-
-                <option>
-                    Portrait
-                </option>
-
-                <option>
-                    Side View
-                </option>
-
-                <option>
-                    Walking
-                </option>
-
+                <option value="Full Body">Full Body Commercial</option>
+                <option value="Portrait">Editorial Close-up Portrait</option>
+                <option value="Side View">Side Silhouette Profile</option>
+                <option value="Walking">Walking / Movement Action</option>
             </select>
-
         </section>
-
-
 
         <!-- ======================================
              GENERATE
         ======================================= -->
-
         <section class="generate-section">
-
-            <button
-                id="generateBtn"
-                onclick="generateResult()"
-            >
-                    <button
-                 id="demoBtn"
-                   class="demo-btn"
-                     onclick="runJudgeDemo()"
->
-                      ▶ RUN JUDGE DEMO
-</button>
-                ⚡ GENERATE PROTOTYPE
-
-            </button>
-
-
+            <button id="generateBtn" onclick="generateResult()">⚡ GENERATE PROTOTYPE</button>
+            <button id="demoBtn" class="demo-btn" onclick="runJudgeDemo()">▶ RUN JUDGE DEMO (LIVE FAILOVER)</button>
             <p id="status"></p>
-
         </section>
-
-
 
         <!-- ======================================
              4. RESULTS
         ======================================= -->
-
-        <section
-            class="card results"
-            id="results"
-        >
-
-
-            <!-- RESULT HEADER -->
-
+        <section class="card results" id="results">
             <div class="result-header">
-
                 <div>
-
-                    <span class="section-tag">
-                        OUTPUT
-                    </span>
-
-                    <h2>
-                        AI Generation Result
-                    </h2>
-
+                    <span class="section-tag">OUTPUT PIPELINE</span>
+                    <h2>AI Generation & Validation Result</h2>
                 </div>
-
-
-                <div class="success-badge">
-
-                    ● QA PASSED
-
-                </div>
-
+                <div class="success-badge">● QA PASSED</div>
             </div>
-
-
 
             <!-- RESULT GRID -->
-
             <div class="result-grid">
-
-
-                <!-- OUTPUT PREVIEW -->
-
+                <!-- OUTPUT PREVIEW (BEFORE & AFTER) -->
                 <div class="output-area">
-
-                    <h3>
-                        Output Preview
-                    </h3>
-
-
+                    <h3>Catalogue Render Preview</h3>
                     <div class="output-preview">
-
-
-                        <img
-                            id="resultImage"
-                            src=""
-                            alt="Generated fashion output"
-                        >
-
-
-                        <div id="outputOverlay">
-
-                            <span>
-                                SIMULATED AI OUTPUT
-                            </span>
-
+                        <div class="preview-column">
+                            <span class="preview-label">RAW INPUT SPEC</span>
+                            <img id="originalResultImage" src="" alt="Input Garment">
                         </div>
-
+                        <div class="preview-arrow">→</div>
+                        <div class="preview-column">
+                            <span class="preview-label processed-label">ROUTED OUTPUT</span>
+                            <div class="processed-image-wrapper">
+                                <img id="resultImage" src="" alt="Generated fashion output">
+                                <span class="processed-overlay" id="activeModelTag">ENGINE: MODEL A</span>
+                            </div>
+                        </div>
+                        <div id="outputOverlay">✓ ENFORCED FIDELITY</div>
                     </div>
-
                 </div>
-
-
 
                 <!-- PERFORMANCE METRICS -->
-
                 <div class="metrics">
-
-                    <h3>
-                        Performance Metrics
-                    </h3>
-
-
+                    <h3>Job Telemetry</h3>
                     <div class="metric">
-
-                        <span>
-                            Garment Fidelity
-                        </span>
-
-                        <strong id="resultFidelity">
-                            95%
-                        </strong>
-
+                        <span>Garment Fidelity</span>
+                        <strong id="resultFidelity">90%</strong>
                     </div>
-
-
                     <div class="metric">
-
-                        <span>
-                            Quality Score
-                        </span>
-
-                        <strong id="resultQuality">
-                            91%
-                        </strong>
-
+                        <span>Quality Score</span>
+                        <strong id="resultQuality">92%</strong>
                     </div>
-
-
                     <div class="metric">
-
-                        <span>
-                            Estimated Cost
-                        </span>
-
-                        <strong id="resultCost">
-                            ₹2.10
-                        </strong>
-
+                        <span>Estimated Cost</span>
+                        <strong id="resultCost">₹2.10</strong>
                     </div>
-
-
                     <div class="metric">
-
-                        <span>
-                            Generation Time
-                        </span>
-
-                        <strong id="resultTime">
-                            8.4 sec
-                        </strong>
-
+                        <span>Generation Time</span>
+                        <strong id="resultTime">8.4 sec</strong>
                     </div>
-
-
                     <div class="metric">
-
-                        <span>
-                            Selected Model
-                        </span>
-
-                        <strong id="resultModel">
-                            Model A
-                        </strong>
-
+                        <span>Selected Engine</span>
+                        <strong id="resultModel">Model A</strong>
                     </div>
-
                 </div>
-
             </div>
 
+            <!-- EXISTING VS INNOVATION -->
+            <div class="compare-box">
+                <div class="compare-col existing">
+                    <span class="compare-tag">EXISTING APPROACH (SINGLE MODEL)</span>
+                    <h4>Always Model C · No Control Layer</h4>
+                    <div class="metric"><span>Engine</span><strong id="exModel">Model C</strong></div>
+                    <div class="metric"><span>Job Cost</span><strong id="exCost">--</strong></div>
+                    <div class="metric"><span>Latency</span><strong id="exTime">--</strong></div>
+                    <div class="metric"><span>Job Status</span><strong id="exOutcome">--</strong></div>
+                    <div class="metric"><span>QA Check</span><strong>None (Direct to consumer)</strong></div>
+                </div>
 
+                <div class="compare-col innovation">
+                    <span class="compare-tag">RANGERS AI CONTROL LAYER</span>
+                    <h4>Routed · Auto-Failover · QA Gated</h4>
+                    <div class="metric"><span>Engine</span><strong id="inModel">--</strong></div>
+                    <div class="metric"><span>Job Cost</span><strong id="inCost">--</strong></div>
+                    <div class="metric"><span>Latency</span><strong id="inTime">--</strong></div>
+                    <div class="metric"><span>Job Status</span><strong id="inOutcome">--</strong></div>
+                    <div class="metric"><span>QA Gate</span><strong id="inQA">--</strong></div>
+                </div>
 
-            <!-- ==================================
-                 ROUTING DECISION
-            =================================== -->
+                <p class="compare-note" id="compareNote"></p>
+            </div>
 
+            <!-- ROUTING DECISION -->
             <div class="routing-box">
-
                 <div class="routing-title">
-
-                    <span>
-                        ⚡
-                    </span>
-
-                    <strong>
-                        Smart Routing Decision
-                    </strong>
-
+                    <span>⚡</span>
+                    <strong>Control Layer Routing Rationale</strong>
                 </div>
-
-
-                <p id="routingReason">
-
-                    Model selected based on quality
-                    and cost requirements.
-
-                </p>
-
+                <p id="routingReason">Model selected based on quality and cost requirements.</p>
             </div>
 
-
-
-            <!-- ==================================
-                 QUALITY ASSURANCE
-            =================================== -->
-
+            <!-- QUALITY ASSURANCE -->
             <div class="qa-section">
-
-
                 <div class="qa-heading">
-
                     <div>
-
-                        <span class="section-tag">
-                            QUALITY CONTROL
-                        </span>
-
-                        <h3>
-                            Automated QA Check
-                        </h3>
-
+                        <span class="section-tag">QUALITY CONTROL GATE</span>
+                        <h3>Automated Garment QA Check</h3>
                     </div>
-
-
-                    <span class="qa-mode">
-                        PROTOTYPE QA
-                    </span>
-
+                    <span class="qa-mode">E-COMMERCE SPEC GATEWAY</span>
                 </div>
-
-
-
-                <!-- OVERALL SCORE -->
 
                 <div class="qa-score-box">
-
                     <div class="qa-score-top">
-
                         <div>
-
-                            <span class="qa-label">
-                                Overall QA Score
-                            </span>
-
-
-                            <strong id="qaOverallScore">
-                                --
-                            </strong>
-
+                            <span class="qa-label">Automated QA Index</span>
+                            <strong id="qaOverallScore">--</strong>
                         </div>
-
-
-                        <span
-                            class="qa-result waiting"
-                            id="qaResult"
-                        >
-                            WAITING
-                        </span>
-
+                        <span class="qa-result waiting" id="qaResult">WAITING</span>
                     </div>
-
-
                     <div class="qa-progress">
-
-                        <div
-                            class="qa-progress-fill"
-                            id="qaProgressFill"
-                        ></div>
-
+                        <div class="qa-progress-fill" id="qaProgressFill"></div>
                     </div>
-
                 </div>
 
-
-
-                <!-- INDIVIDUAL CHECKS -->
-
+                <!-- INDIVIDUAL QA SPEC CHECKS -->
                 <div class="qa-grid">
-
-
                     <div class="qa-item">
-
                         <div>
-
-                            <span>
-                                Garment Structure
-                            </span>
-
-                            <small>
-                                Shape & apparel consistency
-                            </small>
-
+                            <span>Silhouette & Seam Consistency</span>
+                            <small>Garment edge segmentation match</small>
                         </div>
-
-
-                        <strong id="structureCheck">
-                            —
-                        </strong>
-
+                        <strong id="structureCheck">—</strong>
                     </div>
 
-
-
                     <div class="qa-item">
-
                         <div>
-
-                            <span>
-                                Fidelity Threshold
-                            </span>
-
-                            <small>
-                                Requested quality target
-                            </small>
-
+                            <span>Color Accuracy (ΔE < 2.0)</span>
+                            <small>Fabric Pantone variance check</small>
                         </div>
-
-
-                        <strong id="fidelityCheck">
-                            —
-                        </strong>
-
+                        <strong id="fidelityCheck">—</strong>
                     </div>
 
-
-
                     <div class="qa-item">
-
                         <div>
-
-                            <span>
-                                Output Quality
-                            </span>
-
-                            <small>
-                                Visual quality score
-                            </small>
-
+                            <span>Texture & Texture Repeat</span>
+                            <small>Print resolution & distortion check</small>
                         </div>
-
-
-                        <strong id="qualityCheck">
-                            —
-                        </strong>
-
+                        <strong id="qualityCheck">—</strong>
                     </div>
 
-
-
                     <div class="qa-item">
-
                         <div>
-
-                            <span>
-                                Delivery Validation
-                            </span>
-
-                            <small>
-                                Ready for customer delivery
-                            </small>
-
+                            <span>Commercial Delivery Gate</span>
+                            <small>E-commerce compliance threshold</small>
                         </div>
-
-
-                        <strong id="deliveryCheck">
-                            —
-                        </strong>
-
+                        <strong id="deliveryCheck">—</strong>
                     </div>
-
                 </div>
 
-
-
-                <!-- QA MESSAGE -->
-
-                <div
-                    class="qa-message"
-                    id="qaMessage"
-                >
-
-                    Generate an output to run
-                    the QA check.
-
+                <div class="qa-message" id="qaMessage">
+                    Run generation to inspect automated QA check.
                 </div>
 
-
-
-                <!-- APPROVE BUTTON -->
-
-                <button
-                    id="approveBtn"
-                    class="approve-btn"
-                    onclick="approveOutput()"
-                    disabled
-                >
-
-                    ✓ APPROVE OUTPUT
-
+                <button id="approveBtn" class="approve-btn" onclick="approveOutput()" disabled>
+                    ✓ APPROVE FOR CATALOGUE DELIVERY
                 </button>
-
             </div>
 
-
-
-            <!-- ==================================
-                 GENERATION LOG
-            =================================== -->
-
+            <!-- GENERATION LOG -->
             <div class="log-section">
-
-                <h3>
-                    Generation Log
-                </h3>
-
-
-                <div
-                    id="routingLog"
-                    class="generation-log"
-                >
-
+                <h3>Control Layer Audit Trail</h3>
+                <div id="routingLog" class="generation-log">
                     Waiting for generation...
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <!-- ======================================
              5. MODEL COMPARISON
         ======================================= -->
-
         <section class="card">
-
-            <h2>
-                5. Model Comparison
-            </h2>
-
-
+            <h2>5. Model Engine Benchmark</h2>
             <table>
-
                 <thead>
-
                     <tr>
-
-                        <th>
-                            Model
-                        </th>
-
-                        <th>
-                            Fidelity
-                        </th>
-
-                        <th>
-                            Cost
-                        </th>
-
-                        <th>
-                            Time
-                        </th>
-
+                        <th>Engine Provider</th>
+                        <th>Max Fidelity</th>
+                        <th>Cost / Render</th>
+                        <th>Average Latency</th>
+                        <th>Primary Use-Case</th>
                     </tr>
-
                 </thead>
-
-
                 <tbody>
-
-
                     <tr>
-
-                        <td>
-                            Model A
-                        </td>
-
-                        <td>
-                            92%
-                        </td>
-
-                        <td>
-                            ₹2.10
-                        </td>
-
-                        <td>
-                            8.4 sec
-                        </td>
-
+                        <td><strong>Model A (Balanced)</strong></td>
+                        <td>92%</td>
+                        <td>₹2.10</td>
+                        <td>8.4 sec</td>
+                        <td>Standard e-commerce cataloguing</td>
                     </tr>
-
-
-
                     <tr>
-
-                        <td>
-                            Model B
-                        </td>
-
-                        <td>
-                            87%
-                        </td>
-
-                        <td>
-                            ₹1.40
-                        </td>
-
-                        <td>
-                            6.8 sec
-                        </td>
-
+                        <td><strong>Model B (Fast/Budget)</strong></td>
+                        <td>87%</td>
+                        <td>₹1.40</td>
+                        <td>6.8 sec</td>
+                        <td>Rapid exploration, draft previews</td>
                     </tr>
-
-
-
                     <tr>
-
-                        <td>
-                            Model C
-                        </td>
-
-                        <td>
-                            95%
-                        </td>
-
-                        <td>
-                            ₹2.80
-                        </td>
-
-                        <td>
-                            10.2 sec
-                        </td>
-
+                        <td><strong>Model C (High-End)</strong></td>
+                        <td>95%</td>
+                        <td>₹2.80</td>
+                        <td>10.2 sec</td>
+                        <td>Hero banners, luxury print visuals</td>
                     </tr>
-
-
                 </tbody>
-
             </table>
-
         </section>
 
+        <section class="card" id="feasibility">
+            <span class="section-tag">6 · FEASIBILITY & IMPACT</span>
+            <h2>Can it be built, and who benefits?</h2>
+            <div class="story-grid">
+                <div class="story-item">
+                    <strong>Feasible</strong>
+                    <p>A thin routing, QA and logging layer over existing model APIs. No model training needed. This prototype demonstrates the core control logic.</p>
+                </div>
+                <div class="story-item">
+                    <strong>Who benefits</strong>
+                    <p>Fashion brands get lower cost and zero downtime; AI vendors gain a sustainable moat in workflow, not commoditised models.</p>
+                </div>
+                <div class="story-item">
+                    <strong>Impact</strong>
+                    <p>Routes cheap models for fast drafts, top models only when required, with guaranteed uptime via automatic failover.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" id="future">
+            <span class="section-tag">7 · FUTURE SCOPE</span>
+            <h2>How it can grow</h2>
+            <ul class="gap-list">
+                <li>Direct webhooks to Shopify, Myntra, and Amazon catalogue pipelines.</li>
+                <li>Real-time automated LoRA switching for brand-specific models.</li>
+                <li>Reinforcement learning router optimizing for client acceptance rates.</li>
+                <li>Custom edge-segmentation models for micro-millimetre embroidery verification.</li>
+            </ul>
+        </section>
     </main>
-
-
 
     <!-- ==========================================
          FOOTER
     =========================================== -->
-
     <footer>
-
-        <p>
-            RANGERS AI © 2026
-        </p>
-
-        <p>
-            Built for FAIL | 2 | RISE
-        </p>
-
+        <p>RANGERS AI © 2026</p>
+        <p>Built for FAIL | 2 | RISE · Round 2 · Team Rangers</p>
+        <p>Organised by Startup Cell, MITS Gwalior</p>
     </footer>
 
-
-
-    <!-- ==========================================
-         JAVASCRIPT
-    =========================================== -->
-
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-
 </body>
-
 </html>
-```
